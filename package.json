@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "@react-native-async-storage/async-storage": "^2.1.1",
+    "expo-image-picker": "^16.0.6",
+    "expo-notifications": "^0.29.13"
+  }
+}
