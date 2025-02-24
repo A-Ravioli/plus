@@ -160,6 +160,9 @@ To minimize costs while maintaining scalability and ease-of-integration, I recom
 
 ## 10. Detailed Frontend Design and User Flow
 
+### First Experience with the App
+Users should signup and create a unique username. Then, they should be prompted to load in their contacts. They should be able to select specific contacts to add as friends and either invite to the app or add as a friend in the app if they are already a user. Then, they should go to a page where they can select a profile picture. Lastly, they should be prompted to write a journal entry in the bullet format. Once they have written a journal entry, they can post it and see their friends' journals for that day. They can't edit the journal entry once it's posted.
+
 ### Frontend Framework and Tools
 - Build the app using Expo and React Native for rapid development and cross-platform support
 - Use React Navigation to manage the app's screen transitions and bottom tab navigation
