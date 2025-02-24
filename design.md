@@ -33,8 +33,22 @@ The Plus App is an Expo-based mobile application that combines elements of a gra
 
 ### 3.1 Frontend
 
-- **Built With:** Expo and React Native.
-- **UI Components:** Custom components for journaling, social interactions, and notifications, possibly utilizing third-party UI kits (e.g., React Native Paper).
+- **Built With:** Expo and React Native
+- **UI Components:** 
+  - GlueStack UI for a consistent, accessible, and customizable component system
+  - Benefits of using GlueStack:
+    - Universal themes and styling system
+    - Built-in dark mode support
+    - Customizable design tokens
+    - Accessibility-first components
+    - Type-safe components with TypeScript
+  - Key components we'll utilize:
+    - `Button`, `Input`, `TextArea` for journaling interface
+    - `Avatar`, `Card` for user profiles and journal entries
+    - `Toast` for notifications and feedback
+    - `Modal` for confirmations and detailed views
+    - `Tabs` for navigation between sections
+    - `Form` components for authentication flows
 
 ### 3.2 Backend
 
@@ -99,7 +113,8 @@ The Plus App is an Expo-based mobile application that combines elements of a gra
 - Expo (for development and notifications)
 - React Native (for the mobile app framework)
 - Firebase (for authentication, database, and notifications) or alternative backend services
-- UI Libraries (React Native Paper, etc.) for rapid UI development
+- GlueStack UI for component library and theming system
+- Additional UI utilities as needed for specific features
 
 ## 7. Roadmap and Milestones
 
@@ -146,45 +161,71 @@ To minimize costs while maintaining scalability and ease-of-integration, I recom
 ## 10. Detailed Frontend Design and User Flow
 
 ### Frontend Framework and Tools
-- Build the app using Expo and React Native for rapid development and cross-platform support.
-- Use React Navigation to manage the app's screen transitions and bottom tab navigation.
-- Leverage UI libraries such as React Native Paper for consistent and attractive components.
-- Manage global state (e.g., user authentication, notifications) using Context API or Redux.
+- Build the app using Expo and React Native for rapid development and cross-platform support
+- Use React Navigation to manage the app's screen transitions and bottom tab navigation
+- Implement GlueStack UI for a consistent and accessible component system:
+  - Set up custom theme configuration
+  - Define color tokens and typography system
+  - Create reusable component compositions
+- Manage global state (e.g., user authentication, notifications) using Context API or Redux
 
 ### Authentication and Onboarding
 - **Login/Signup Flow:**
-  - Integrate Firebase Authentication to support email/password, Google, or Apple sign-in options.
-  - Use a dedicated login screen that directs new users to an onboarding process (setting up a profile with username and profile picture).
-- **Splash Screen:**
-  - On app launch, display a splash screen that checks authentication status and directs the user either to the login screen or the home screen.
+  - Use GlueStack's `Form`, `Input`, and `Button` components for authentication screens
+  - Create a cohesive visual hierarchy using GlueStack's spacing and layout system
+  - Implement form validation using GlueStack's form components
+  - Style authentication screens using GlueStack's theme tokens
 
 ### Main Navigation and User Flow
 - **Home Screen:**
-  - Displays the daily journaling prompt if it's the designated time.
-  - Once a journal post is published, show a feed of friends' recent entries.
-  - Utilize a bottom tab navigator with tabs such as Home, Journal, Friends, and Profile.
+  - Utilize GlueStack's `Card` component for journal entries
+  - Implement pull-to-refresh using GlueStack's feedback components
+  - Use `Toast` for success/error notifications
+  - Create custom layouts using GlueStack's responsive grid system
 
 - **Journal Composition Screen:**
-  - Provide an interface for drafting multi-part journal entries in a threaded bullet point format.
-  - Implement auto-save for drafts and a clean UI for editing entries.
-  - Upon posting, trigger an update to the backend to record the journal and update the point system.
+  - Build with GlueStack's `TextArea` and rich text components
+  - Implement draft saving with visual feedback using `Toast`
+  - Use `Modal` for confirmation dialogs
+  - Add rich formatting options using GlueStack's button groups
 
 - **Friend and Social Interaction:**
-  - Design screens for searching for friends, sending/receiving friend requests, and managing friend lists.
-  - Include a notification center to alert users to relevant activities (new journal posts, friend requests, etc.).
+  - Create friend cards using GlueStack's `Card` and `Avatar` components
+  - Implement search with GlueStack's `Input` and filtering components
+  - Use `Toast` for friend request notifications
+  - Build activity feed using GlueStack's list components
 
 - **Profile and Gamification:**
-  - Create a profile screen where users can view personal details, point totals, and journal history.
-  - Display achievements and milestones in a visually engaging manner to motivate regular usage.
+  - Design profile layout using GlueStack's responsive grid
+  - Implement achievements using custom-styled `Badge` components
+  - Create point displays using GlueStack's typography system
+  - Build settings screens using GlueStack's form components
 
-### Additional User Flow Considerations
-- **Push Notifications:**
-  - Use Expo's Notification services to send timely reminders for journaling, as well as updates on social interactions.
-- **Offline Functionality:**
-  - Leverage Firestore's offline persistence to allow users to draft entries and view cached data even without network connectivity.
-- **User Experience:**
-  - Ensure smooth transitions between screens with clear calls-to-action, such as clearly labeled buttons for posting journals and navigating the friend system.
-  - Provide feedback on actions (e.g., animations when posting a journal, visual cues when points are updated).
+### UI/UX Guidelines with GlueStack
+
+1. **Theming and Styling:**
+   - Define a consistent color palette using GlueStack's theme tokens
+   - Create responsive layouts using GlueStack's built-in spacing system
+   - Implement dark mode using GlueStack's color mode utilities
+   - Use GlueStack's typography scale for consistent text hierarchy
+
+2. **Component Patterns:**
+   - Create reusable component compositions for common UI patterns
+   - Implement consistent form layouts using GlueStack's form components
+   - Use GlueStack's animation utilities for micro-interactions
+   - Maintain accessibility through GlueStack's built-in a11y features
+
+3. **Responsive Design:**
+   - Utilize GlueStack's breakpoint system for adaptive layouts
+   - Implement responsive spacing using theme tokens
+   - Create flexible grids for different screen sizes
+   - Ensure touch targets meet accessibility guidelines
+
+4. **Performance Considerations:**
+   - Lazy load components when possible
+   - Implement virtual lists for long scrolling content
+   - Use GlueStack's optimized components for better performance
+   - Monitor and optimize re-renders using React DevTools
 
 ---
 
